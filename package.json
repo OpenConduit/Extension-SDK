@@ -18,11 +18,17 @@
   "files": [
     "dist"
   ],
+  "bin": {
+    "ocx-scan": "./dist/cli/scan.js",
+    "ocx-pack": "./dist/cli/pack.js"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "build": "tsup",
+    "scan": "tsx src/cli/scan.ts",
+    "pack": "tsx src/cli/pack.ts",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build"
   },
@@ -36,7 +42,9 @@
   },
   "devDependencies": {
     "@types/react": "^19.0.0",
+    "fflate": "^0.8.3",
     "tsup": "^8.0.0",
+    "tsx": "^4.0.0",
     "typescript": "^5.8.0"
   },
   "keywords": [
